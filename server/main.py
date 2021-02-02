@@ -17,11 +17,13 @@ def on_forever():
                 bot_states[bot_id] = 2 # alive
 
     def kill_bots():
+        basic.show_string("killing")
         for bot_iterator in range(1, len(bots)):
             bot_id = bots[bot_iterator]
             radio.send_string(f'kill-{str(bot_id)}')
             bot_states[bot_id] = 4 # waiting for response
     def print_pwn():
+        basic.show_string("pwn'")
         for bot_iterator in range(1, len(bots)):
             bot_id = bots[bot_iterator]
             radio.send_string(f'pwn-{str(bot_id)}')
